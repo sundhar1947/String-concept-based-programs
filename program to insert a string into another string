@@ -1,0 +1,28 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the original string: ");
+        String originalString = scanner.nextLine();
+        
+        System.out.print("Enter the string to insert: ");
+        String stringToInsert = scanner.nextLine();
+        
+        System.out.print("Enter the position where to insert the string (0 to " 
+                         + originalString.length() + "): ");
+        int position = scanner.nextInt();
+        
+        if (position < 0 || position > originalString.length()) {
+            System.out.println("Invalid position. Position must be between 0 and " + originalString.length());
+        } else {
+            
+            StringBuilder modifiedString = new StringBuilder(originalString);
+            modifiedString.insert(position, stringToInsert);
+            
+            System.out.println("Modified String: " + modifiedString.toString());
+        }
+
+        scanner.close();
+    }
+}
+
