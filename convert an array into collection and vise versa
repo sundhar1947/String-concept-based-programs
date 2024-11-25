@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+public class Main {
+
+    public static <T> Collection<T> arrayToCollection(T[] array) {
+        return Arrays.asList(array);
+    }
+
+    public static <T> T[] collectionToArray(Collection<T> collection, T[] array) {
+        return collection.toArray(array);
+    }
+
+    public static void main(String[] args) {
+        String[] array = {"Apple", "Banana", "Cherry"};
+
+        Collection<String> collection = arrayToCollection(array);
+        System.out.println("Converted Collection: " + collection);
+
+        String[] newArray = collectionToArray(collection, new String[0]);
+        System.out.println("Converted Array: " + Arrays.toString(newArray));
+        
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Collection<Integer> intCollection = arrayToCollection(intArray);
+        System.out.println("Converted Integer Collection: " + intCollection);
+
+        Integer[] newIntArray = collectionToArray(intCollection, new Integer[0]);
+        System.out.println("Converted Integer Array: " + Arrays.toString(newIntArray));
+    }
+}
