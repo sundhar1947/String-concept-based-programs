@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class StackSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Stack<Integer> stack = new Stack<>();
+        
+        System.out.println("Enter the number of integers you want to input:");
+        int n = scanner.nextInt();
+        
+        System.out.println("Enter " + n + " integers:");
+        for (int i = 0; i < n; i++) {
+            int number = scanner.nextInt();
+            stack.push(number); 
+        }
+        
+        int sum = 0;
+        while (!stack.isEmpty()) {
+            sum += stack.pop(); 
+        }
+        
+        System.out.println("The sum of the integers is: " + sum);
+        
+        scanner.close();
+    }
+}
